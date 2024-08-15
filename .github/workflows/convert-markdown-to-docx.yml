@@ -20,7 +20,6 @@ jobs:
           find . -iname "*.md" ! -iname "LICENSE.md" | while read -r file; do
             # Convert to both .docx and .doc
             pandoc "$file" -o "${file%.*}.docx"
-            pandoc "$file" -o "${file%.*}.doc"
           done
           
       - name: Commit Changes
