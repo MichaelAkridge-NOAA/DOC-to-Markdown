@@ -1,5 +1,9 @@
-DOC-to-Markdown
-===============
+# DOC-to-Markdown
+
+# Enable Github Action Permissions
+Go to Settings > Actions > General > Workflow Permissions
+- Make sure Read and write permissions are enabled
+![image](./images/s01.png)
 
 #### Disclaimer
 
