@@ -7,7 +7,7 @@ on:
       - '**/*.DOCX'
       - '**/*.doc'
       - '**/*.DOC'
-
+  workflow_dispatch:  # This allows manual triggering
 jobs:
   convert_doc_to_md:
     runs-on: ubuntu-latest
