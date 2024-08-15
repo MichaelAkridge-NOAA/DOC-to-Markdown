@@ -17,7 +17,7 @@ jobs:
 
       - name: Convert Markdown to DOCX
         run: |
-          find . -iname "*.md" ! -iname "LICENSE.md" | while read -r file; do
+          find . -iname "*.md" ! -iname "LICENSE.md" ! -iname "README.md" | while read -r file; do
             pandoc "$file" -o "${file%.*}.docx"
           done
           
@@ -28,4 +28,3 @@ jobs:
           git add *.docx
           git commit -m "Convert Markdown to DOCX"
           git push
-
