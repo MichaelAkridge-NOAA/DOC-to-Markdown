@@ -36,8 +36,7 @@ Setup: Enable Github Action Permissions
 
 Go to Settings \> Actions \> General \> Workflow Permissions - Make sure
 Read and write permissions are enabled
-![image](media/rId25.png){width="5.833333333333333in"
-height="1.5596325459317586in"}
+![image](./images/s01.png)
 
 Usage
 -----
