@@ -1,0 +1,29 @@
+name: Convert All DOCX to Markdown
+
+on: 
+  push:
+    paths:
+      - '**/*.docx'
+    paths-ignore:
+      - LICENSE.md
+
+jobs:
+  convert_docx_to_md:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Convert DOCX to Markdown
+        run: |
+          for file in $(find . -name "*.docx"); do
+            pandoc "$file" -o "${file%.docx}.md"
+          done
+          
+      - name: Commit Changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add *.md
+          git commit -m "Convert DOCX to Markdown"
+          git push
+
