@@ -1,4 +1,4 @@
-name: Convert All Markdown to DOCX/DOC
+name: Convert All Markdown to DOCX
 
 on: 
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  convert_md_to_doc:
+  convert_md_to_docx:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,10 +15,9 @@ jobs:
       - name: Install Pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
 
-      - name: Convert Markdown to DOCX/DOC
+      - name: Convert Markdown to DOCX
         run: |
           find . -iname "*.md" ! -iname "LICENSE.md" | while read -r file; do
-            # Convert to both .docx and .doc
             pandoc "$file" -o "${file%.*}.docx"
           done
           
@@ -26,7 +25,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add *.docx *.doc
-          git commit -m "Convert Markdown to DOCX/DOC"
+          git add *.docx
+          git commit -m "Convert Markdown to DOCX"
           git push
 
