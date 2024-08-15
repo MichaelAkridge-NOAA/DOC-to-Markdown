@@ -13,7 +13,7 @@ jobs:
   convert_doc_to_md:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install Pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
