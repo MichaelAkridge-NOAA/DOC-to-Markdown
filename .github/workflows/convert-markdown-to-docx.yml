@@ -4,7 +4,8 @@ on:
   push:
     paths:
       - '**/*.md'
-  workflow_dispatch:  # This allows manual triggering
+  workflow_dispatch:
+
 jobs:
   convert_md_to_doc:
     runs-on: ubuntu-latest
@@ -16,10 +17,10 @@ jobs:
 
       - name: Convert Markdown to DOCX/DOC
         run: |
-          for file in $(find . -iname "*.md" ! -iname "LICENSE.md"); do
+          find . -iname "*.md" ! -iname "LICENSE.md" | while read -r file; do
             # Convert to both .docx and .doc
-            pandoc "$file" -o "${file%.md}.docx"
-            pandoc "$file" -o "${file%.md}.doc"
+            pandoc "$file" -o "${file%.*}.docx"
+            pandoc "$file" -o "${file%.*}.doc"
           done
           
       - name: Commit Changes
