@@ -3,7 +3,7 @@
 
 Automatic conversion between DOCX/DOC and Markdown formats.
 
-## Workflows
+### Workflows
 
 ### 1. Convert DOCX/DOC Files to Markdown
 
