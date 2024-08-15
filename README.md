@@ -1,4 +1,4 @@
-# DOC-to-Markdown & Markdown to DOCX Converter
+# DOCX-to-Markdown & Markdown to DOCX Converter
 <img src="./images/icon.png" align="right" alt="logo"/>
 
 Automatic conversion between DOCX/DOC and Markdown formats.
