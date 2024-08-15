@@ -1,12 +1,8 @@
 name: Convert All Markdown to DOCX
-
 on: 
   push:
     paths:
       - '**/*.md'
-    paths-ignore:
-      - LICENSE.md
-
 jobs:
   convert_md_to_docx:
     runs-on: ubuntu-latest
